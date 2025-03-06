@@ -1,12 +1,15 @@
 package config
 
-import "os"
+import (
+	"log"
+	"os"
+)
 
 // GetAPIBaseURL returns the base URL for the API
 func GetAPIBaseURL() string {
 	baseURL := os.Getenv("SNCF_API_URL")
 	if baseURL == "" {
-		baseURL = "https://ressources.data.sncf.com/api/explore/v2.1/catalog/datasets/tgvmax/records"
+		log.Fatalf("SNCF_API_URL is not set")
 	}
 	return baseURL
 }
