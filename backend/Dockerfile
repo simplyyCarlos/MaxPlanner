@@ -1,9 +1,9 @@
-FROM golang:1.24-alpine
+# Choose whatever you want, version >= 1.16
+FROM golang:1.23-alpine
 
 WORKDIR /app
 
-RUN apk add --no-cache git curl && \
- go install github.com/air-verse/air@latest
+RUN go install github.com/air-verse/air@latest
 
 COPY go.mod go.sum ./
 RUN go mod download
@@ -12,4 +12,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["air"]
+CMD ["air", "-c", ".air.toml"]

@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// GetSNCFData handles API requests
 func GetSNCFData(c *gin.Context) {
 	data, err := services.FetchSNCFData(c)
 	if err != nil {
