@@ -1,15 +1,21 @@
 package config
 
 import (
-	"log"
+	"fmt"
 	"os"
+
+	"github.com/joho/godotenv"
 )
 
 // GetAPIBaseURL returns the base URL for the API
-func GetAPIBaseURL() string {
-	baseURL := os.Getenv("SNCF_API_URL")
-	if baseURL == "" {
-		log.Fatalf("SNCF_API_URL is not set")
+func GetAPIBaseURL() (string, error) {
+	err := godotenv.Load()
+	if err != nil {
+		err = fmt.Errorf("Error loading .env file : %v ", err)
+		return "", err
 	}
-	return baseURL
+
+	baseURL := os.Getenv("SNCF_API_URL")
+	return baseURL, nil
+
 }

@@ -7,6 +7,7 @@
 # Build directories
 bin/
 obj/
+tmp/
 
 # Vendor directory (if using Go modules, this can be ignored)
 vendor/
