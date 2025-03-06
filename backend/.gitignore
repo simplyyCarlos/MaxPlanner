@@ -1,0 +1,26 @@
+# Go binary and executable
+*.exe
+*.exe~
+*.out
+*.test
+
+# Build directories
+bin/
+obj/
+
+# Vendor directory (if using Go modules, this can be ignored)
+vendor/
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+
+# .env file
+.env
+
+# GoLand editor files
+*.iml
+
+# Log files
+*.log
