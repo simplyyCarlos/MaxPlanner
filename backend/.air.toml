@@ -1,0 +1,5 @@
+root = "."
+[build]
+  cmd = "go build -o main ."
+  bin = "./main"
+  include_ext = ["go", "tpl", "tmpl", "html"]
